@@ -162,7 +162,7 @@ class EDDSP_Sale_Price {
 		endif;
 
 		if ( isset( $sale_price ) && ! empty( $sale_price ) ) :
-			$formatted_price = '<del>' . edd_currency_filter( edd_format_amount( $regular_price ) ) . '</del>&nbsp;' . $formatted_price;
+			$formatted_price = '<del>' . edd_currency_filter( edd_format_amount( $regular_price ) ) . '</del>&nbsp;' . edd_currency_filter( edd_format_amount( $sale_price ) );
 		endif;
 
 		return $formatted_price;
@@ -183,7 +183,10 @@ class EDDSP_Sale_Price {
 	 * @return	array			List of arguments for the payment button.
 	 */
 	public function maybe_display_sale_price_text( $args ) {
-return $args;
+
+		if ( ! apply_filters( 'eddsp_display_regular_price_text_buy_button', false ) ) :
+			return $args;
+		endif;
 
 		$add_to_cart_text 	= edd_get_option( 'add_to_cart_text' );
 		$default_args 		= apply_filters( 'edd_purchase_link_defaults', array(
@@ -245,7 +248,8 @@ return $args;
 		// Get sale price if it exists
 		if ( $download->has_variable_prices() ) :
 			$prices = $download->get_prices();
-			$sale_price = $prices[ $options['price_id'] ]['sale_price'];
+			$regular_price 	= isset( $prices[ $options['price_id'] ]['regular_amount'] ) ? $prices[ $options['price_id'] ]['regular_amount'] : $regular_price;
+			$sale_price 	= $prices[ $options['price_id'] ]['sale_price'];
 		else :
 			$sale_price	= get_post_meta( $item_id, 'edd_sale_price', true );
 		endif;

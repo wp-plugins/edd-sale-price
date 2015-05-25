@@ -2,9 +2,9 @@
 Contributors: sormano, shopplugins
 Donate link: http://www.jeroensormani.com/donate/
 Tags: edd, easy digital downloads, edd sale, easy digital downloads sale, edd sale price, easy digital downloads sale price, edd promotion, easy digital downloads promotion, edd promo, easy digital downloads promo, edd discount, easy digital downloads discount
-Requires at least: 3.6
-Tested up to: 4.1.1
-Stable tag: 1.0.0
+Requires at least: 3.7
+Tested up to: 4.2
+Stable tag: 1.0.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -15,7 +15,7 @@ Promote your downloads with a sale price!
 
 Numerous studies have shown that people are more likely to buy a product, no matter what, if it is has a discount. Specially if it is something they already wanted to have. The discount will trigger the potential customer to buy your products fast.
 
-Setting up a discount correctly is important, of course you can just lower the price, but then most people will not know the product is discounted. With EDD Sale Price the regular price will be shown with a strikethrough so people will see how much it regulary costs, and what the new sale price is!
+Setting up a discount correctly is important, of course you can just lower the price, but then most people will not know the product is discounted. With EDD Sale Price the regular price will be shown with a strikethrough so people will see how much it regularly costs, and what the new sale price is!
 
 Works with both simple downloads and variable priced downloads.
 
@@ -52,5 +52,12 @@ The checkout is one of those places where we improved this. But due to a new cha
 
 == Changelog ==
 
+= 1.0.1 - 25/05/2015 =
+
+* [Fix] - Sale price incorrect in admin dashboard
+* [Fix] - Incorrect sale price in cart when adding a variable download
+* [Improvement] - Add filter to allow the regular price with a strikethrough on the buy button.
+
 = 1.0.0 - 22/02/2015 =
+
 * Initial release
